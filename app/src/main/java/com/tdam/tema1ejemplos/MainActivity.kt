@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.graphics.toColorInt
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import org.w3c.dom.Text
@@ -29,12 +30,12 @@ class MainActivity : AppCompatActivity() {
         boton.setOnClickListener{
             val nombre=datos_nombre.text.toString()
             val apellido= datos_apellido.text.toString()
-
             texto_introducido.text="Tu nombre es $nombre \n" +
                                    "Tu apellido es $apellido"
             boton.isClickable=false
             boton.isVisible=false
-
+            datos_nombre.getText().clear()
+            datos_apellido.getText().clear()
         }
 
     }
